@@ -29,18 +29,11 @@ class CON_MYSQL(object):
                 db_Info = self._connection.get_server_info()
                 print("Connected to MySQL Server version ", db_Info)
                 self._cursor = self._connection.cursor()
-                # self._cursor.execute("select database();")
-    
-
         except Error as e:
             print("Error while connecting to MySQL", e)
-        # finally:
-        #     if self._connection.is_connected():
-        #         self._connection.close()
-        #         self._cursor.close()
-        #         print("MySQL connection is closed")
+      
 
-    # @property
+    @property
     def get_cursor(self):
         return self._connection.cursor()
 
@@ -52,8 +45,6 @@ class CON_MYSQL(object):
     # def query(self, sql, params=None):
     def query(self, sql):
         try:
-            print(self._cursor)
-          
             self._cursor.execute(sql)
             myresult = self._cursor.fetchall()
             return myresult
@@ -65,5 +56,26 @@ class CON_MYSQL(object):
                 self._connection.close()
                 self._cursor.close()
                 print("MySQL connection is closed")
+    
+    # recordTuple =(CAMERA_ID,Camera,Camera_Loc,Record_id)
+    # result = CON_MYSQL.query(sql,recordTuple)
+    
+    def query_where(self, sql,recordTuple):
+        try:
+            print(sql)
+            print(recordTuple)
+            # self._cursor = self._cursor(buffered=True)
+            self._cursor.execute(sql,recordTuple)
+            myresult = self._cursor.fetchall()
+            return myresult
 
+        except Error as e:
+            print("Error reading data from MySQL table", e)
+        finally:
+            if  self._connection.is_connected():
+                self._connection.close()
+                self._cursor.close()
+                print("MySQL connection is closed")
+    
+  
    
