@@ -60,7 +60,7 @@ class CON_MYSQL(object):
     # recordTuple =(CAMERA_ID,Camera,Camera_Loc,Record_id)
     # result = CON_MYSQL.query(sql,recordTuple)
     
-    def query_where(self, sql,recordTuple):
+    def data_query(self, sql,recordTuple):
         try:
             print(sql)
             print(recordTuple)
@@ -76,6 +76,23 @@ class CON_MYSQL(object):
                 self._connection.close()
                 self._cursor.close()
                 print("MySQL connection is closed")
-    
+
+    def insert_query(self, sql,recordTuple):
+        try:
+            print(sql)
+            print(recordTuple)
+            # self._cursor = self._cursor(buffered=True)
+            self._cursor.execute(sql,recordTuple)
+            self._connection.commit()
+            print(self._cursor.rowcount, "record inserted.")
+
+
+        except Error as e:
+            print("Error reading data from MySQL table", e)
+        finally:
+            if  self._connection.is_connected():
+                self._connection.close()
+                self._cursor.close()
+                print("MySQL connection is closed")
   
    
