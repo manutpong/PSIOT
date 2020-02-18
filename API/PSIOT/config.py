@@ -2,14 +2,15 @@ import os
 import datetime
 
 class Config:
-    MYSQL_HOST = 'psiot.blogdns.com'
+    # MYSQL_HOST = 'psiot.blogdns.com'
+    MYSQL_HOST = 'localhost'
     MYSQL_USER = 'admin'
     MYSQL_PASS = 'Ps123456'
     MYSQL_DB     = 'psiot'
     SECRET_KEY = '4aoqSpq9gPW9DBLbfplpyfDGlumCoB5b'
     JWT_SECRET_KEY = '5KqXLIvagLqVqtSix9IvPZGfLeFWuKRE'
     JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(days=1)
-    PORT='8081'
+    PORT='5000'
 
 
     # SAP_ASHOST = '10.1.200.58'

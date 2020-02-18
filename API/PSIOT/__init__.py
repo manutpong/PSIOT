@@ -9,7 +9,8 @@ jwt = JWTManager()
 def create_app(config_class=Config):
     app = Flask(__name__)
     CORS(app)
-    app.config.from_object(Config)    
+    app.config.from_object(Config)  
+      
     from PSIOT.NVR.routes import NVR
     from PSIOT.home.routes import home
 
