@@ -35,3 +35,13 @@ def NVR_Records():
     result = get_NVR_where(ID_NVR,NVR,NVR_Loc)
     # data = result.to_dict(orient='records') 
     return jsonify(result)
+
+
+@NVR.route('/add_NVR', methods=['POST'])
+def add_NVR():
+    Vuser_name = request.json.get('name', None)
+ 
+
+
+
+    return jsonify(result)
