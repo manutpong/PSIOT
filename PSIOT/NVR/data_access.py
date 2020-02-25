@@ -37,14 +37,16 @@ def get_NVR_where(ID_NVR,NVR,NVR_LOC):
     print(result)
     return result
 
-def add_NVR(ID_NVR,NVR,NVR_LOC,DESCRIPTION):
+def Insert_NVR(NVR,NVR_LOC,DESCRIPTION):
     CONSQL = CON_MYSQL()
 
     sql = "insert into main_device (NVR,NVR_LOC,DESCRIPTION)"
     sql += " VALUES (%s, %s, %s)"
     if NVR != "" :
         recordTuple = (NVR,NVR_LOC,DESCRIPTION)
-        CONSQL.insert_query(sql,recordTuple)
+        result = CONSQL.insert_query(sql,recordTuple)
+        return result
+    
 
 # def get_NVR(CAMERA_ID,camera,camera_Loc,Description,Record_id){
 #     CONSQL = CON_MYSQL()

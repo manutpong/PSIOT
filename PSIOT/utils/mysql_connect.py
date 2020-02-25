@@ -85,7 +85,7 @@ class CON_MYSQL(object):
             self._cursor.execute(sql,recordTuple)
             self._connection.commit()
             print(self._cursor.rowcount, "record inserted.")
-
+            return self._cursor.rowcount
 
         except Error as e:
             print("Error reading data from MySQL table", e)
