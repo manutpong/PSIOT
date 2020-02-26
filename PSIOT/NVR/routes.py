@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify,request
 from PSIOT.NVR.data_access import get_NVR
 from PSIOT.NVR.data_access import get_NVR_where
-from PSIOT.NVR.data_access as db
+from PSIOT.NVR.data_access import Insert_NVR
 # import datetime
 
 NVR = Blueprint('NVR', __name__)
@@ -40,17 +40,17 @@ def NVR_Records():
 
 @NVR.route('/add_NVR', methods=['POST'])
 def add_NVR():
-    Vnvr = request.json.get('NVR', None).
+    Vnvr = request.json.get('NVR', None)
     Vnvr_loc = request.json.get('NVR_LOC', None)
     Vdescription = request.json.get('DESCRIPTION', None)
     #---------------------------------------------------------------
-    result = db.Insert_NVR(Vnvr,Vnvr_loc,Vdescription)
+    result = Insert_NVR(Vnvr,Vnvr_loc,Vdescription)
     result = {
                 'code':200,
                 'data':{
-                    'USERID' : ,
-                    'EMTAILTOKEN' : ,
-                    'EMAIL' : 
+                    'USERID' : "",
+                    'EMTAILTOKEN' : "",
+                    'EMAIL' : ""
                 },
                 "message": {
                             "en": "success",

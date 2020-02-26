@@ -6,3 +6,5 @@
 2020-02-25 05:18:37.027988: wfastcgi.py 3.0.0 initialized
 2020-02-25 05:26:44.782110: wfastcgi.py will restart when files in C:\inetpub\wwwroot\PSIOT\ are changed: .*((\.py)|(\.config))$
 2020-02-25 05:26:44.785113: wfastcgi.py 3.0.0 initialized
+2020-02-26 06:44:50.571641: wfastcgi.py will restart when files in C:\inetpub\wwwroot\PSIOT\ are changed: .*((\.py)|(\.config))$
+2020-02-26 06:44:50.572639: wfastcgi.py 3.0.0 initialized
