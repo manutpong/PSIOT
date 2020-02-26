@@ -8,3 +8,11 @@
 2020-02-25 05:26:44.785113: wfastcgi.py 3.0.0 initialized
 2020-02-26 06:44:50.571641: wfastcgi.py will restart when files in C:\inetpub\wwwroot\PSIOT\ are changed: .*((\.py)|(\.config))$
 2020-02-26 06:44:50.572639: wfastcgi.py 3.0.0 initialized
+2020-02-26 06:50:50.830644: wfastcgi.py exiting because PSIOT\NVR\routes.py has changed, matching .*((\.py)|(\.config))$
+2020-02-26 06:50:50.830644: Running on_exit tasks
+2020-02-26 06:53:52.398630: wfastcgi.py will restart when files in C:\inetpub\wwwroot\PSIOT\ are changed: .*((\.py)|(\.config))$
+2020-02-26 06:53:52.399646: wfastcgi.py 3.0.0 initialized
+2020-02-26 06:57:10.575647: wfastcgi.py exiting because PSIOT\NVR\routes.py has changed, matching .*((\.py)|(\.config))$
+2020-02-26 06:57:10.576644: Running on_exit tasks
+2020-02-26 07:09:43.762899: wfastcgi.py will restart when files in C:\inetpub\wwwroot\PSIOT\ are changed: .*((\.py)|(\.config))$
+2020-02-26 07:09:43.764897: wfastcgi.py 3.0.0 initialized
