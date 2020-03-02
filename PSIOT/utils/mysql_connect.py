@@ -95,4 +95,20 @@ class CON_MYSQL(object):
                 self._cursor.close()
                 print("MySQL connection is closed")
   
-   
+    def Update_query(self, sql,recordTuple):
+        try:
+            print(sql)
+            print(recordTuple)
+            # self._cursor = self._cursor(buffered=True)
+            self._cursor.execute(sql,recordTuple)
+            self._connection.commit()
+            print(self._cursor.rowcount, "record Updates.")
+            return self._cursor.rowcount
+
+        except Error as e:
+            print("Error reading data from MySQL table", e)
+        finally:
+            if  self._connection.is_connected():
+                self._connection.close()
+                self._cursor.close()
+                print("MySQL connection is closed")

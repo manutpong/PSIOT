@@ -53,3 +53,34 @@ def add_NVR():
                             }
                     }   
     return jsonify(result), 200
+Update_nve
+
+@NVR.route('/update_NVR', methods=['PUT'])
+def add_NVR():
+    VID_nvr = request.args.get('ID_NVR')
+    Vnvr = request.args.get('NVR')
+    Vnvr_loc = request.args.get('NVR_LOC')
+    Vdescription = request.args.get('DESCRIPTION')
+    if VID_nvr is not None :
+        if Vnvr is None :  
+            Vnvr = ""
+        if Vnvr_loc is None :  
+            Vnvr_loc = ""    
+        if Vdescription is None :  
+            Vdescription = ""
+        #---------------------------------------------------------------
+        result = Insert_NVR(VID_nvr,Vnvr,Vnvr_loc,Vdescription)
+        if result > 0:
+            result = {
+                        'code':200,
+                        'data':{
+                            'USERID' : "",
+                            'EMTAILTOKEN' : "",
+                            'EMAIL' : ""
+                        },
+                        "message": {
+                                    "en": "success",
+                                    "th": "สำเร็จ"
+                                }
+                        }   
+        return jsonify(result), 200
