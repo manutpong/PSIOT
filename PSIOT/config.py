@@ -4,7 +4,7 @@ import datetime
 class Config:
     # MYSQL_HOST = 'psiot.blogdns.com'
     MYSQL_HOST = 'localhost'
-    MYSQL_USER = 'admin'
+    MYSQL_USER = 'psiot'
     MYSQL_PASS = 'Ps123456'
     MYSQL_DB     = 'psiot'
     SECRET_KEY = '4aoqSpq9gPW9DBLbfplpyfDGlumCoB5b'

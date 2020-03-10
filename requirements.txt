@@ -25,3 +25,4 @@ Werkzeug==0.15.2
 wrapt==1.10.11
 flask_cors==3.0.8
 mysql_connector_python==8.0.19
+mysql-connector==2.2.9

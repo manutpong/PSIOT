@@ -9,6 +9,10 @@ def get_user(username,password):
     Tuple = ()
     sql = "SELECT * FROM user "
     sql += "where username = %s and password = %s"
+    if username is None :  
+        username = ""    
+    if password is None :  
+        password = ""
     Tuple = (username,password)
     print("SQL = "+sql)
     print(Tuple)

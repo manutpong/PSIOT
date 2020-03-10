@@ -1,5 +1,6 @@
 # from pyrfc import Connection
 import mysql.connector
+
 import pandas as pd
 from flask import current_app
 from mysql.connector import Error
@@ -25,6 +26,10 @@ class CON_MYSQL(object):
                 passwd=self.passwd,
                 database=self.db
             )
+            if self._connection.open:
+                print('open')
+            else:
+                print('closed')
             if self._connection.is_connected():
                 db_Info = self._connection.get_server_info()
                 print("Connected to MySQL Server version ", db_Info)

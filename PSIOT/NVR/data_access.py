@@ -46,7 +46,16 @@ def Insert_NVR(NVR,NVR_LOC,DESCRIPTION):
         recordTuple = (NVR,NVR_LOC,DESCRIPTION)
         result = CONSQL.insert_query(sql,recordTuple)
         return result
+
+def Update_NVR(NVR,NVR_LOC,DESCRIPTION,ID_NVR):
+    CONSQL = CON_MYSQL()
+    sql = "update main_device set NVR = %s , NVR_LOC = $s , DESCRIPTION = %s "
+    sql += " where ID_NVR = %s"
     
+    if ID_NVR != "" :
+        Tuple = (NVR,NVR_LOC,DESCRIPTION,ID_NVR)
+        result = CONSQL.insert_query(sql,Tuple)
+        return result
 
 # def get_NVR(CAMERA_ID,camera,camera_Loc,Description,Record_id){
 #     CONSQL = CON_MYSQL()
