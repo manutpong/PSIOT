@@ -1,11 +1,11 @@
 import pandas as pd
-from PSIOT.utils.mysql_connect import CON_MYSQL
+from PSIOT.utils.mysql_connect import mysql_connect
 
 
 
 
 def get_user(username,password):
-    CONSQL = CON_MYSQL()
+    CONSQL = mysql_connect()
     Tuple = ()
     sql = "SELECT * FROM user "
     sql += "where username = %s and password = %s"
@@ -16,7 +16,8 @@ def get_user(username,password):
     Tuple = (username,password)
     print("SQL = "+sql)
     print(Tuple)
-    result = CONSQL.data_query(sql,Tuple)
+    result = CONSQL.query(sql,Tuple)
+    print("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
     print(result)
     return result
 

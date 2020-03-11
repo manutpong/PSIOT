@@ -2,8 +2,8 @@ import os
 import datetime
 
 class Config:
-    # MYSQL_HOST = 'psiot.blogdns.com'
-    MYSQL_HOST = 'localhost'
+    MYSQL_HOST = 'psiot.blogdns.com'
+    # MYSQL_HOST = 'localhost'
     MYSQL_USER = 'psiot'
     MYSQL_PASS = 'Ps123456'
     MYSQL_DB     = 'psiot'

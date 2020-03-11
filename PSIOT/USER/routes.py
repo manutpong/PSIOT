@@ -5,10 +5,12 @@ from PSIOT.USER.data_access import get_user
 USER = Blueprint('USER', __name__)
 
 
-@USER.route("/user",methods=['GET'])
+@USER.route("/get_user",methods=['GET'])
 def user():
     username = request.args.get('username')    
     password = request.args.get('password')   
+    print(username)
+    print(password)
     if username is not None and password is not None:
         result = get_user(username,password)
     return jsonify(result)

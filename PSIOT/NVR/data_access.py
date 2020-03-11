@@ -1,16 +1,15 @@
 import pandas as pd
-from PSIOT.utils.mysql_connect import CON_MYSQL
+from PSIOT.utils.mysql_connect import mysql_connect
 
 
 def get_NVR():
-    CONSQL = CON_MYSQL()
+    CONSQL = mysql_connect()
     sql = "SELECT * FROM main_device"
     result = CONSQL.query(sql)    
-    print(result)
     return result
 
 def get_NVR_where(ID_NVR,NVR,NVR_LOC):
-    CONSQL = CON_MYSQL()
+    CONSQL = mysql_connect()
     Tuple = ()
     sql = "SELECT * FROM main_device"
     if ID_NVR != "" or NVR != "" or NVR_LOC != "":
@@ -33,28 +32,28 @@ def get_NVR_where(ID_NVR,NVR,NVR_LOC):
     recordTuple = Tuple
     print("SQL = "+sql)
     print(recordTuple)
-    result = CONSQL.data_query(sql,recordTuple)
+    result = CONSQL.query(sql,recordTuple)
     print(result)
     return result
 
 def Insert_NVR(NVR,NVR_LOC,DESCRIPTION):
-    CONSQL = CON_MYSQL()
+    CONSQL = mysql_connect()
 
     sql = "insert into main_device (NVR,NVR_LOC,DESCRIPTION)"
     sql += " VALUES (%s, %s, %s)"
     if NVR != "" :
         recordTuple = (NVR,NVR_LOC,DESCRIPTION)
-        result = CONSQL.insert_query(sql,recordTuple)
+        result = CONSQL.query(sql,recordTuple)
         return result
 
 def Update_NVR(NVR,NVR_LOC,DESCRIPTION,ID_NVR):
-    CONSQL = CON_MYSQL()
+    CONSQL = mysql_connect()
     sql = "update main_device set NVR = %s , NVR_LOC = $s , DESCRIPTION = %s "
     sql += " where ID_NVR = %s"
     
     if ID_NVR != "" :
         Tuple = (NVR,NVR_LOC,DESCRIPTION,ID_NVR)
-        result = CONSQL.insert_query(sql,Tuple)
+        result = CONSQL.query(sql,Tuple)
         return result
 
 # def get_NVR(CAMERA_ID,camera,camera_Loc,Description,Record_id){
